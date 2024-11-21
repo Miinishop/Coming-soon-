@@ -10,79 +10,141 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Arial', sans-serif;
             background: url('https://i.suar.me/8GNy6/l') no-repeat center center fixed;
             background-size: cover;
+            color: white;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            color: white;
+            overflow: hidden;
+            position: relative;
         }
+
         .overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
-        .content {
-            position: relative;
-            z-index: 2;
+
+        .maintenance-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(to right, #ff6f61, #ff4a3d);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            z-index: 3;
+            text-align: center;
             backdrop-filter: blur(10px);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 1.5s ease-in-out;
+            padding: 30px;
+            animation: fadeIn 1.5s ease-out;
         }
+
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem; /* تصغير حجم النص */
+            color: #ffb703;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
         }
+
         p {
             font-size: 1.2rem;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #f1f5f9;
+            margin-bottom: 20px;
         }
+
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
             color: white;
-            background: #ff6f61;
+            background: linear-gradient(to right, #3b82f6, #2563eb);
             border: none;
             border-radius: 8px;
             text-decoration: none;
-            transition: background 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 255, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .button:hover {
-            background: #ff4a3d;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 255, 0.6);
         }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: scale(0.95);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
-                transform: scale(1);
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
+    <div class="maintenance-bar">🚧 القسم تحت الصيانة - شكرًا لتفهمك 🚧</div>
     <div class="content">
         <h1>🚧 تحت الصيانة 🚧</h1>
-        <p>نعمل حاليًا على تحسين الموقع لتقديم تجربة أفضل لك. شكرًا لصبرك!</p>
-        <a href="https://miinishop.github.io/Home/" class="button">العودة إلى الصفحة الرئيسية</a>
+        <p>نقوم حالياً بترقية خدماتنا لتوفير تجربة أفضل لك. شكرًا لتفهمك!</p>
+        <a href="https://miinishop.github.io/Home/" class="button">العودة إلى صفحة</a>
+        <div class="social-icons">
+            <a href="https://youtube.com/@minishop" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/telegramminishop" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+            <a href="https://t.me/Telegraamminishop" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+            <a href="https://www.tiktok.com/@telegrammiiniapp" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" alt="TikTok"></a>
+        </div>
     </div>
 </body>
 </html>
